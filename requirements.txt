@@ -1,2 +1,8 @@
 pytest
 sphinx
+flask
+flask-sqlalchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+marshmallow
+connexion
