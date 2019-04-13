@@ -1,0 +1,99 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /students:
+    get:
+      operationId: student.views.read_all
+      tags:
+        - Students
+      summary: Read the entire set of students, sorted by last name
+      description: Read the entire set of students, sorted by last name
+      responses:
+        200:
+          description: Successful read student list operation
+          schema:
+            type: array
+            items:
+              properties:
+                student_id:
+                  type: integer
+                  description: unique identifier of the student
+                first_name:
+                  type: string
+                  description: first name of the student
+                last_name:
+                  type: string
+                  description: last name of the student
+    post:
+      operationId: student.views.create
+      tags:
+        - Students
+      summary: Create a new student
+      description: Create a new student
+      parameters:
+        - name: student
+          in: body
+          description: Student to create
+          required: True
+          schema:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: first name of the student
+              last_name:
+                type: string
+                description: last name of the student
+      responses:
+        201:
+          description: Successfully created student
+          schema:
+            properties:
+              student_id:
+                type: integer
+                description: unique identifier of the student
+              first_name:
+                type: string
+                description: first name of the student
+              last_name:
+                type: string
+                description: last name of the student
+
+  /students/{student_id}:
+    get:
+      operationId: student.views.read_one
+      tags:
+        - Students
+      summary: Read one student
+      description: Read one student
+      parameters:
+        - name: student_id
+          in: path
+          description: Id of the student to get
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read student from Student data operation
+          schema:
+            type: object
+            properties:
+              student_id:
+                type: integer
+                description: unique identifier of the student
+              first_name:
+                type: string
+                description: first name of the student
+              last_name:
+                type: string
+                description: last name of the student

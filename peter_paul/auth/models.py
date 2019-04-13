@@ -1,5 +1,5 @@
 from datetime import datetime
-from peter_paul import db
+from peter_paul.config import db
 
 
 class Base(db.Model):
