@@ -4,7 +4,7 @@ import connexion
 
 
 # configure the connexion app
-connexion_app = connexion.App(__name__, specification_dir='swagger/')
+connexion_app = connexion.App(__name__, specification_dir='openapi/')
 connexion_app.add_api('student.yml')
 
 # configure the flask app
