@@ -19,7 +19,7 @@ db = SQLAlchemy(flask_app)
 ma = Marshmallow(flask_app)
 
 # Import a module / component using its blueprint handler variable (mod_auth)
-from peter_paul.auth.views import mod_auth as auth_module
+# from peter_paul.auth.views import mod_auth as auth_module
 
 # Register blueprint(s)
 # app.register_blueprint(auth_module)
